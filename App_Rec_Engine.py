@@ -15,7 +15,7 @@ total_app_descriptions.append(genre)
 app_data['word_data'] = total_app_descriptions
 
 # construct a TF-IDF Matrix to compute similarity scores between products
-tf = TfidfVectorizer(input='word', encoding='utf-8', stop_ords='english')
+tf = TfidfVectorizer(input='word', encoding='utf-8', stop_words='english')
 tfid_matrix = tf.fit_transform(app_data['word_data'])
 similarity_scores = linear_kernel(tfid_matrix, tfid_matrix)
 
